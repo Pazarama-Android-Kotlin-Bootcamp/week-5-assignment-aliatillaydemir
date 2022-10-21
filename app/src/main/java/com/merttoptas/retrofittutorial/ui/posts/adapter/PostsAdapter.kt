@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.merttoptas.retrofittutorial.data.model.Post
 import com.merttoptas.retrofittutorial.data.model.PostDTO
 import com.merttoptas.retrofittutorial.databinding.ItemPostLayoutBinding
 

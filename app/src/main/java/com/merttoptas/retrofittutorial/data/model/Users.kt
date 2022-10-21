@@ -21,3 +21,7 @@ data class Users(
     @SerializedName("website")
     val website: String?
 )
+
+data class UserDTO(
+    val name: String?
+)

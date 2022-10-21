@@ -8,17 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
-import com.merttoptas.retrofittutorial.data.local.database.PostsDatabase
 import com.merttoptas.retrofittutorial.data.model.DataState
-import com.merttoptas.retrofittutorial.data.model.Post
 import com.merttoptas.retrofittutorial.data.model.PostDTO
-import com.merttoptas.retrofittutorial.data.repository.PostRepositoryImpl
 import com.merttoptas.retrofittutorial.databinding.FragmentPostsBinding
 import com.merttoptas.retrofittutorial.ui.loadingprogress.LoadingProgressBar
 import com.merttoptas.retrofittutorial.ui.posts.adapter.OnPostClickListener
 import com.merttoptas.retrofittutorial.ui.posts.adapter.PostsAdapter
-import com.merttoptas.retrofittutorial.ui.posts.viewmodel.PostViewEvent
-import com.merttoptas.retrofittutorial.ui.posts.viewmodel.PostViewModelFactory
+import com.merttoptas.retrofittutorial.ui.posts.viewmodel.UserViewEvent
 import com.merttoptas.retrofittutorial.ui.posts.viewmodel.PostsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -68,8 +64,8 @@ class PostsFragment : Fragment(), OnPostClickListener {
 
         viewModel.eventStateLiveData.observe(viewLifecycleOwner) {
             when (it) {
-                is PostViewEvent.ShowMessage -> {}
-                is PostViewEvent.NavigateToDetail -> {}
+                is UserViewEvent.ShowMessage -> {}
+                is UserViewEvent.NavigateToDetail -> {}
             }
         }
 

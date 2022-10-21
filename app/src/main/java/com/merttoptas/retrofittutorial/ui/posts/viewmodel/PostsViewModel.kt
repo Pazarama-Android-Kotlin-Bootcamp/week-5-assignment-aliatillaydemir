@@ -1,6 +1,5 @@
 package com.merttoptas.retrofittutorial.ui.posts.viewmodel
 
-import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,8 +24,8 @@ class PostsViewModel @Inject constructor(private val postRepository: PostReposit
     val postLiveData: LiveData<DataState<List<PostDTO>?>>
         get() = _postLiveData
 
-    private val _eventStateLiveData = MutableLiveData<PostViewEvent>()
-    val eventStateLiveData: LiveData<PostViewEvent>
+    private val _eventStateLiveData = MutableLiveData<UserViewEvent>()
+    val eventStateLiveData: LiveData<UserViewEvent>
         get() = _eventStateLiveData
 
     init {
@@ -60,7 +59,7 @@ class PostsViewModel @Inject constructor(private val postRepository: PostReposit
 
             override fun onFailure(call: Call<List<Post>>, t: Throwable) {
                 _postLiveData.postValue(DataState.Error(t.message.toString()))
-                _eventStateLiveData.postValue(PostViewEvent.ShowMessage(t.message.toString()))
+                _eventStateLiveData.postValue(UserViewEvent.ShowMessage(t.message.toString()))
             }
         })
     }
