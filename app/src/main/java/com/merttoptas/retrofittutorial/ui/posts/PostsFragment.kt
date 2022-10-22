@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
+import com.merttoptas.retrofittutorial.DetailFragmentArgs
 import com.merttoptas.retrofittutorial.data.model.DataState
 import com.merttoptas.retrofittutorial.data.model.PostDTO
 import com.merttoptas.retrofittutorial.databinding.FragmentPostsBinding
@@ -24,12 +26,19 @@ class PostsFragment : Fragment(), OnPostClickListener {
     private lateinit var binding: FragmentPostsBinding
     private val viewModel by viewModels<PostsViewModel>()
 
+    private val args by navArgs<DetailFragmentArgs>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentPostsBinding.inflate(inflater, container, false)
+
+       /* val postBundle = Bundle()
+        postBundle.putParcelable("postBundle", args.post)*/
+
+
         return binding.root
     }
 
